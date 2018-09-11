@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PhonesController@index');
 
 Auth::routes();
 
@@ -26,6 +24,7 @@ Route::get('/phonesNotInStock','PhonesController@notInStock')->name('phones.notI
 
 Route::post('/add-to-cart','cartController@addCart')->name('add-to-cart');
 Route::get('/showCart','cartController@index')->name('carts.index');
+Route::get('/checkOut','cartController@checkOut')->name('carts.checkout');
 
 
 Route::get('/order-history','cartController@orderHistory')->name('orders.history');
@@ -38,7 +37,7 @@ Route::get('/showUser','userController@showUser')->name('show-user');
 //Route::get('/roles','rolesController@index')->name('roles.index');
 
 
-Route::middleware('role:ROLE_ADMIN')->prefix('admin')->group(function (){
+Route::prefix('admin')->middleware('role:ROLE_ADMIN')->group(function (){
     Route::get('/','AdminController@index');
     Route::get('/dashboard','AdminController@dashboard')->name('admin.adminDashboard');
 
@@ -50,18 +49,17 @@ Route::middleware('role:ROLE_ADMIN')->prefix('admin')->group(function (){
     Route::get('/allOrders','ordersController@index')->name('orders.index');
 
 
-    Route::get('roles',function ()
-    {
-        return App\Role::all();
-    });
 
 
     Route::resource('/users','usersController');
-//    Route::resource('/roles','rolesController');
+    Route::resource('/roles','rolesController');
 
 
 //    Route::get('/users','usersController@index')->name('users.index');
 //    Route::get('/users/{user}/edit','usersController@edit')->name('users.edit');
     Route::get('/users/{user}','usersController@block')->name('users.block');
+
 //    Route::get('/users/create','usersController@block')->name('create.user');
 });
+
+Route::get('/users/{user}', 'usersController@usersProfile')->name('users.profile');

@@ -15,18 +15,25 @@
 </head>
 <body>
 <div class="row container-fluid">
+
 @include('_includes.nav.main')
+
 </div>
+
 <div class="row">
 <div class="col-md-4">
+
 @include('_includes.nav.manage')
+
 </div>
 <div id="app" class="col-md-6 col-lg-6">
     @yield('content')
 </div>
     <div class="col-md-2"></div>
 </div>
+
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

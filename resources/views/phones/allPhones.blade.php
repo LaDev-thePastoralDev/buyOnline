@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-   {{--@yield('layouts.nav')--}}
+
     <div class="row">
 
                     @foreach($phones as $phone)
@@ -18,7 +18,7 @@
 
                     {{csrf_field()}}
                     {{{method_field('DELETE')}}}
-                    {{--<a href="/phones/{{$phone->id}}" title="Delete Phone"><button  class="btn btn-danger btn-sm">Delete Phone</button></a>--}}
+
                     <button  class="btn btn-danger btn-sm" title="Delete Phone">Delete Phone</button>
 
                 </form>
@@ -46,5 +46,5 @@
                     @endforeach
 
         </div>
-    {{--</div>--}}
+
 @endsection()

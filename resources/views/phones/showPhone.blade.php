@@ -12,7 +12,6 @@
                     <p class="text-center">{{$phone->cost}}</p>
                 </div>
 
-                {{--<a href="/phones/{{$phone->id}}/edit"><button class="btn btn-success btn-sm">Edit</button></a>--}}
                 <div class="row">
 
                     <div class="col-md-3">
@@ -35,8 +34,5 @@
             </div>
 
 
-        {{--</table>--}}
-
     </div>
-    {{--</div>--}}
 @endsection()

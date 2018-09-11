@@ -36,7 +36,7 @@
             var selected_page = document.getElementById("category").value;
             if (selected_page != "") {
                 window.location.href = selected_page
-                //Please note that the value recived,
+                //Please note that the value received,
                 //in this case selected_page,
                 //should be a valid url!
                 //Therefore the value of the

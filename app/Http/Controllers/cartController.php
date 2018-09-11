@@ -79,10 +79,17 @@ class cartController extends Controller
 
     }
 
-    public function index(){
+    public function index()
+    {
 
         $cartGoods=Cart::where('client','=',Auth::user()->email)->get();
         return view('cart.cartsIndex',compact('cartGoods'));
+    }
+
+    public function checkOut()
+    {
+        $cartGoods=Cart::where('client','=',Auth::user()->email)->get();
+        return view('cart.cartsIndex', compact('cartGoods'));
     }
 
     public function orderHistory()

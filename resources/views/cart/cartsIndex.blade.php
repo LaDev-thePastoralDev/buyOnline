@@ -29,7 +29,7 @@
  </div>
 
     <div class="row">
-        <button type="submit" class="btn btn-sm btn-success form-control pull-right" title="Check Out" >Check Out</button>
+        <a href="{{route('carts.checkout')}}"><button type="submit" class="btn btn-sm btn-success form-control pull-right" title="Check Out" >Check Out</button></a>
     </div>
 
 
